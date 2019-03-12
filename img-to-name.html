@@ -1,0 +1,18 @@
+<script>
+  // https://tickchak.co.il/4107
+
+
+  
+function addImg(str,url){
+        $("li").each(function(){
+      if($(this).children().eq(2).text().includes(str)){$(this).append("<span></span>"); 
+$(this).children().last().css({"background-image":url}).addClass("artist")}
+    });
+}
+function run(){
+        $(".artist-name").each(function(){
+      addImg($(this).text(), $(this).parent().css("background-image"));
+    });
+}
+run()
+</script>

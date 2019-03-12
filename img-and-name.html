@@ -1,0 +1,33 @@
+
+<script>
+//https://tickchak.co.il/4107
+
+
+
+//array of all url's
+  var imgArray = [];
+  $(".program").text("")
+  $(".artist").each(function () {
+    imgArray.push($(this).css("background-image"))
+  });
+
+//array of all names
+  var myarray = [];
+  $(".program").text("")
+  $(".artist-name").each(function () {
+    myarray.push($(this).text())
+  });
+
+//the table
+  var content = "<table>"
+  for (i = 0; i < myarray.length; i++) {
+    content += '<tr><td>' + myarray[i] + '<sub class="myarray[i]"></sub></td></tr>';
+  }
+  content += "</table>"
+  $('.program').append(content);
+
+//append image
+  for (i = 0; i < imgArray.length; i++) {
+    $('sub').eq(i).css({"background-image":imgArray[i]}).width(100).height(100).addClass("artist")
+  }
+</script>
